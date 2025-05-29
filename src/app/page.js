@@ -1,7 +1,9 @@
+import { KPIResultTable } from "../components/custom/kpi-result-table";
+
 export default function Home() {
   return (
-    <div>
-      <h1>Hello world!</h1>
-    </div>
+    <>
+      <KPIResultTable />
+    </>
   );
 }

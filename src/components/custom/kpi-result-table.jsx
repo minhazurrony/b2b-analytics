@@ -155,8 +155,8 @@ export const KPIResultTable = () => {
   return (
     <>
       <Table className="w-full">
-        <TableHeader className="text-[#1D1D1D]">
-          <TableRow className="border-b border-[#5F6073]">
+        <TableHeader className="text-dime-dark-grey">
+          <TableRow className="border-b-dime-dark-grey">
             <CustomTableHead label="parameter" isFirstHeader={true} />
             <CustomTableHead label="nov 2021" extraLabel="result" />
             <CustomTableHead label=" oct 2021" />
@@ -168,9 +168,11 @@ export const KPIResultTable = () => {
         <TableBody>
           {sections.map((section) => (
             <React.Fragment key={section.title}>
-              <TableRow key={section.title}>
+              <TableRow
+                key={section.title}
+                className="border-b-dime-light-grey">
                 <TableCell colSpan={1} className="pt-6 pb-2 text-left">
-                  <span className="text-sm font-semibold text-[#1D1D1D]">
+                  <span className="text-sm font-semibold text-dime-dark-grey">
                     {section.title}
                   </span>
                 </TableCell>
@@ -178,36 +180,36 @@ export const KPIResultTable = () => {
               {section.rows.map((row, idx) => (
                 <TableRow
                   key={idx}
-                  className="border-t border-b border-[#EAEAEA] p-5">
-                  <TableCell className="text-sm font-light text-[#1D1D1D] whitespace-nowrap">
+                  className="border-t-dime-light-grey border-b-dime-light-grey p-5">
+                  <TableCell className="text-sm font-light text-dime-dark-grey whitespace-nowrap">
                     {row.parameter}
                   </TableCell>
-                  <TableCell className="text-sm font-light text-center text-[#1D1D1D]">
+                  <TableCell className="text-sm font-light text-center text-dime-dark-grey">
                     {row.nov}
                   </TableCell>
-                  <TableCell className="text-sm font-light text-center text-[#1D1D1D]">
+                  <TableCell className="text-sm font-light text-center text-dime-dark-grey">
                     {row.oct}
                   </TableCell>
                   <TableCell
                     className={`text-sm text-center font-light ${
                       row.trend.startsWith("-")
-                        ? "text-[#FF4D4F]"
-                        : "text-[#028A0F]"
+                        ? "text-dime-error-red"
+                        : "text-dime-good-green"
                     }`}>
                     {row.trend}
                   </TableCell>
-                  <TableCell className="text-sm text-center font-light text-[#1D1D1D]">
+                  <TableCell className="text-sm text-center font-light text-dime-dark-grey">
                     {row.median}
                   </TableCell>
                   <TableCell className="text-sm text-center">
-                    <div className="flex justify-center gap-0.5 rounded-xs border border-[#BFBFBF] w-40 m-auto">
+                    <div className="flex justify-center gap-0.5 rounded border border-dime-outline-grey w-40 m-auto">
                       {[1, 2, 3, 4, 5].map((p) => (
                         <div
                           key={p}
                           className={`w-6 h-6 text-xs font-light flex items-center justify-center ${
                             row.percentile === p
-                              ? "bg-[#BFBFBF] text-white font-bold"
-                              : "text-[#1D1D1D]"
+                              ? "bg-dime-form-grey text-white font-bold"
+                              : "text-dime-dark-grey"
                           }`}>
                           {p}
                         </div>
@@ -220,7 +222,7 @@ export const KPIResultTable = () => {
           ))}
         </TableBody>
       </Table>
-      <p className="text-[10px] text-[#1D1D1D] mt-2 ml-2">
+      <p className="text-[10px] text-dime-body-grey mt-2 ml-2">
         * For this metric, a result below target is favorable.
       </p>
     </>

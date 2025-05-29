@@ -1,7 +1,12 @@
+import { Container } from "@/components/custom/container";
+import { KPIResultTable } from "../components/custom/kpi-result-table";
+
 export default function Home() {
   return (
-    <div>
-      <h1>Hello world!</h1>
-    </div>
+    <>
+      <Container title="KPI Results">
+        <KPIResultTable />
+      </Container>
+    </>
   );
 }

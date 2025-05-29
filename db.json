@@ -1,0 +1,144 @@
+{
+  "kpi-results": [
+    {
+      "title": "Profitability",
+      "rows": [
+        {
+          "parameter": "Total Revenue",
+          "nov": "$329,397",
+          "oct": "$328,739",
+          "trend": "+0.2%",
+          "median": "$373,063",
+          "percentile": 1
+        },
+        {
+          "parameter": "Gross Profit Margin",
+          "nov": "58.45%",
+          "oct": "61.68%",
+          "trend": "-3.23%",
+          "median": "45.88%",
+          "percentile": 2
+        },
+        {
+          "parameter": "Profitability Ratio",
+          "nov": "58.45%",
+          "oct": "61.68%",
+          "trend": "-3.23%",
+          "median": "45.88%",
+          "percentile": 3
+        },
+        {
+          "parameter": "Net Profit After Tax Margin",
+          "nov": "58.45%",
+          "oct": "61.68%",
+          "trend": "-3.23%",
+          "median": "45.88%",
+          "percentile": 4
+        },
+        {
+          "parameter": "Wages as a % of Sales",
+          "nov": "58.45%",
+          "oct": "61.68%",
+          "trend": "-3.23%",
+          "median": "45.88%",
+          "percentile": 5
+        },
+        {
+          "parameter": "Rent as a % of Sales *",
+          "nov": "58.45%",
+          "oct": "61.68%",
+          "trend": "-3.23%",
+          "median": "45.88%",
+          "percentile": 3
+        }
+      ]
+    },
+    {
+      "title": "Membership",
+      "rows": [
+        {
+          "parameter": "Number of Members",
+          "nov": "2,087",
+          "oct": "1,990",
+          "trend": "97",
+          "median": "1,272",
+          "percentile": 3
+        },
+        {
+          "parameter": "Active Member",
+          "nov": "2,087",
+          "oct": "1,990",
+          "trend": "97",
+          "median": "1,272",
+          "percentile": 3
+        },
+        {
+          "parameter": "Revenue per Active Member",
+          "nov": "$329,397",
+          "oct": "$328,739",
+          "trend": "+0.2%",
+          "median": "$373,063",
+          "percentile": 3
+        },
+        {
+          "parameter": "Rev / SQM of Gym",
+          "nov": "$329,397",
+          "oct": "$328,739",
+          "trend": "+0.2%",
+          "median": "$373,063",
+          "percentile": 3
+        }
+      ]
+    },
+    {
+      "title": "Cash Flow",
+      "rows": [
+        {
+          "parameter": "Cash on Hand",
+          "nov": "$329,397",
+          "oct": "$328,739",
+          "trend": "+0.2%",
+          "median": "$373,063",
+          "percentile": 3
+        },
+        {
+          "parameter": "Net Variable Cash Flow",
+          "nov": "58.45%",
+          "oct": "61.68%",
+          "trend": "-3.23%",
+          "median": "45.88%",
+          "percentile": 3
+        }
+      ]
+    },
+    {
+      "title": "Growth",
+      "rows": [
+        {
+          "parameter": "Revenue Growth",
+          "nov": "58.45%",
+          "oct": "61.68%",
+          "trend": "-3.23%",
+          "median": "45.88%",
+          "percentile": 3
+        },
+        {
+          "parameter": "Gross Profit Growth",
+          "nov": "58.45%",
+          "oct": "61.68%",
+          "trend": "-3.23%",
+          "median": "45.88%",
+          "percentile": 3
+        },
+        {
+          "parameter": "EBIT Growth",
+          "nov": "58.45%",
+          "oct": "61.68%",
+          "trend": "-3.23%",
+          "median": "45.88%",
+          "percentile": 3
+        }
+      ]
+    }
+  ]
+}

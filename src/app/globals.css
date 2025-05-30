@@ -137,6 +137,11 @@
 
 @layer components {
   .recharts-cartesian-grid-horizontal line:last-child {
+    /* @apply hidden; */
+  }
+
+  .recharts-cartesian-grid-vertical line:nth-child(6),
+  .recharts-cartesian-grid-vertical line:nth-child(7) {
     @apply hidden;
   }
 }

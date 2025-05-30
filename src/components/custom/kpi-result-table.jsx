@@ -33,8 +33,8 @@ export const KPIResultTable = () => {
   return (
     <>
       <Table className="w-full">
-        <TableHeader className="text-dime-dark-grey">
-          <TableRow className="border-b-dime-dark-grey">
+        <TableHeader className="text-dime-dark-grey border-b-dime-body-grey">
+          <TableRow>
             <CustomTableHead label="parameter" isFirstHeader={true} />
             <CustomTableHead label="nov 2021" extraLabel="result" />
             <CustomTableHead label=" oct 2021" />

@@ -195,6 +195,59 @@
         "fixedCosts": 60000,
         "variableCosts": 65000
       }
+    ],
+    "analysis": [
+      {
+        "id": 1,
+        "cards": [
+          {
+            "title": "TOTAL REVENUE",
+            "value": 329397,
+            "description": "A measure of the total amount of money received by the company for goods sold or services provided."
+          },
+          {
+            "title": "VARIABLE COSTS",
+            "value": "$0.36/$1 rev"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "cards": [
+          {
+            "title": "EXPENSES TO REVENUE RATIO",
+            "value": "79.72%",
+            "description": "A measure of how efficiently the business is conducting its operations."
+          },
+          {
+            "title": "FIXED COSTS",
+            "value": 145617
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "cards": [
+          {
+            "title": "TOTAL COSTS",
+            "value": 262606
+          },
+          {
+            "title": "BREAKEVEN POINT",
+            "value": 225818
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "cards": [
+          {
+            "title": "BREAKEVEN MARGIN OF SAFETY",
+            "value": 103578,
+            "description": "The breakeven safety margin represents the gap between the actual revenue level and the breakeven point. In other words, the amount by which revenue can drop before losses begin to be incurred."
+          }
+        ]
+      }
     ]
   }
 }

@@ -65,7 +65,7 @@ const CustomLegend = ({ payload }) => {
 };
 
 export function BreakevenChart() {
-  const [data, setData] = useState({ chart: [], analysis: [] });
+  const [data, setData] = useState({ chart: [] });
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {

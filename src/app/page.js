@@ -1,6 +1,7 @@
 import { Container } from "@/components/custom/container";
 import { KPIResultTable } from "../components/custom/kpi-result-table";
 import ProfitabilityChart from "@/components/custom/profitability-chart";
+import { BreakevenChart } from "@/components/custom/breakeven-chart";
 
 export default function Home() {
   return (
@@ -11,6 +12,10 @@ export default function Home() {
 
       <Container title="Profitability for All Time">
         <ProfitabilityChart />
+      </Container>
+
+      <Container title="Breakeven Analysis">
+        <BreakevenChart />
       </Container>
     </>
   );

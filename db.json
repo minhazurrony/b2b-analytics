@@ -150,5 +150,51 @@
     { "date": "Jan 25", "revenue": 94000, "gross": 64000, "operating": 52000 },
     { "date": "Jan 30", "revenue": 103000, "gross": 70000, "operating": 57000 },
     { "date": "Feb 4", "revenue": 120000, "gross": 83000, "operating": 64000 }
-  ]
+  ],
+  "breakeven-analysis": {
+    "chart": [
+      {
+        "date": "January 1",
+        "revenue": 0,
+        "fixedCosts": 60000,
+        "variableCosts": 0
+      },
+      {
+        "date": "January 5",
+        "revenue": 15000,
+        "fixedCosts": 60000,
+        "variableCosts": 7000
+      },
+      {
+        "date": "January 10",
+        "revenue": 30000,
+        "fixedCosts": 60000,
+        "variableCosts": 12000
+      },
+      {
+        "date": "January 15",
+        "revenue": 50000,
+        "fixedCosts": 60000,
+        "variableCosts": 20000
+      },
+      {
+        "date": "January 20",
+        "revenue": 80000,
+        "fixedCosts": 60000,
+        "variableCosts": 35000
+      },
+      {
+        "date": "January 25",
+        "revenue": 110000,
+        "fixedCosts": 60000,
+        "variableCosts": 48000
+      },
+      {
+        "date": "January 30",
+        "revenue": 150000,
+        "fixedCosts": 60000,
+        "variableCosts": 65000
+      }
+    ]
+  }
 }

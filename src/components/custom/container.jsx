@@ -13,7 +13,7 @@ import {
 
 export const Container = ({
   title,
-  isBottomBorderVisible = false,
+  isBottomBorderVisible = true,
   children,
 }) => {
   return (

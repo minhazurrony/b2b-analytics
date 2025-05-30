@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import {
   LineChart,
   Line,
@@ -10,17 +11,7 @@ import {
   Legend,
   CartesianGrid,
 } from "recharts";
-
-const data = [
-  { date: "Jan 1", revenue: 72000, gross: 52000, operating: 42000 },
-  { date: "Jan 5", revenue: 6900, gross: 55000, operating: 43000 },
-  { date: "Jan 10", revenue: 76000, gross: 57000, operating: 45000 },
-  { date: "Jan 15", revenue: 82000, gross: 60000, operating: 48000 },
-  { date: "Jan 20", revenue: 88000, gross: 62000, operating: 50000 },
-  { date: "Jan 25", revenue: 94000, gross: 64000, operating: 52000 },
-  { date: "Jan 30", revenue: 103000, gross: 70000, operating: 57000 },
-  { date: "Feb 4", revenue: 120000, gross: 83000, operating: 64000 },
-];
+import { ChartLoader } from "./chart-loader";
 
 const CustomTooltip = ({ active, payload, label }) => {
   if (active && payload?.length) {
@@ -103,10 +94,29 @@ const CustomLegend = ({ payload }) => {
 };
 
 export default function ProfitabilityChart() {
+  const [chartData, setChartData] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    setIsLoading(true);
+    fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/profitability-chart`)
+      .then((res) => res.json())
+      .then((json) => {
+        setChartData(json);
+        setIsLoading(false);
+      })
+      .catch((err) => console.error(err))
+      .finally(() => setIsLoading(false));
+  }, []);
+
+  if (isLoading || !chartData.length) {
+    return <ChartLoader />;
+  }
+
   return (
     <div className="h-[350px]">
       <ResponsiveContainer width="100%" height="100%">
-        <LineChart data={data}>
+        <LineChart data={chartData}>
           <CartesianGrid
             stroke={"var(--color-dime-outline-grey)"}
             vertical={false}

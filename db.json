@@ -140,5 +140,15 @@
         }
       ]
     }
+  ],
+  "profitability-chart": [
+    { "date": "Jan 1", "revenue": 72000, "gross": 52000, "operating": 42000 },
+    { "date": "Jan 5", "revenue": 6900, "gross": 55000, "operating": 43000 },
+    { "date": "Jan 10", "revenue": 76000, "gross": 57000, "operating": 45000 },
+    { "date": "Jan 15", "revenue": 82000, "gross": 60000, "operating": 48000 },
+    { "date": "Jan 20", "revenue": 88000, "gross": 62000, "operating": 50000 },
+    { "date": "Jan 25", "revenue": 94000, "gross": 64000, "operating": 52000 },
+    { "date": "Jan 30", "revenue": 103000, "gross": 70000, "operating": 57000 },
+    { "date": "Feb 4", "revenue": 120000, "gross": 83000, "operating": 64000 }
   ]
 }

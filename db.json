@@ -386,5 +386,31 @@
         "percentile": "94%"
       }
     ]
-  }
+  },
+  "kpi-appendix": [
+    {
+      "id": "1",
+      "title": "Cash On Hand",
+      "amount": 756132,
+      "status": "fail",
+      "description": "A measure of the cash and cash equivalents in actual possession by the company at a particular time. At the end of this period the company held $756,132 of cash and cash equivalents. Cash on Hand is below the required target of $900,000. Insufficient cash reserves may result in an inability to pay creditors and cover current liabilities.",
+      "formula": "Cash on Hand = Cash & Equivalents",
+      "median": 1599532,
+      "rank": "5/6",
+      "percentile": 0,
+      "progress": 20
+    },
+    {
+      "id": "2",
+      "title": "Cash On Hand",
+      "amount": 756132,
+      "status": "sucess",
+      "description": "A measure of the cash and cash equivalents in actual possession by the company at a particular time. At the end of this period the company held $756,132 of cash and cash equivalents. Cash on Hand is below the required target of $900,000. Insufficient cash reserves may result in an inability to pay creditors and cover current liabilities.",
+      "formula": "Cash on Hand = Cash & Equivalents",
+      "median": 1599532,
+      "rank": "5/6",
+      "percentile": 0,
+      "progress": 60
+    }
+  ]
 }

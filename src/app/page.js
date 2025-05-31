@@ -4,6 +4,7 @@ import ProfitabilityChart from "@/components/custom/profitability-chart";
 import { BreakevenChart } from "@/components/custom/breakeven-chart";
 import { AnalysisStatsSection } from "@/components/custom/analysis-stats-section";
 import { RevenueBenchmarkChart } from "@/components/custom/revenue-benchmark-chart";
+import { KPIAccordion } from "@/components/custom/kpi-accordion";
 
 export default function Home() {
   return (
@@ -25,6 +26,10 @@ export default function Home() {
 
       <Container title="Revenue Benchmark">
         <RevenueBenchmarkChart />
+      </Container>
+
+      <Container title="KPI Explained (Appendix)">
+        <KPIAccordion />
       </Container>
     </>
   );

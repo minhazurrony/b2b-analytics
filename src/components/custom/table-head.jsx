@@ -7,7 +7,7 @@ export const CustomTableHead = ({
   isFirstHeader = false,
 }) => {
   return (
-    <TableHead className="text-[14px] font-medium uppercase align-bottom">
+    <TableHead className="text-sm font-medium uppercase align-bottom">
       <div
         className={
           isFirstHeader
@@ -15,7 +15,7 @@ export const CustomTableHead = ({
             : "w-fit m-auto text-right py-4"
         }>
         {extraLabel && (
-          <p className="uppercase text-[#615591] text-xs font-medium">
+          <p className="uppercase text-dime-light-purple text-xs font-medium">
             {extraLabel}
           </p>
         )}

@@ -1,7 +1,6 @@
-// components/StatCard.tsx
 import { Card, CardContent } from "@/components/ui/card";
 
-export const AnalysisStatsCard = ({ title, value, description }) => {
+export const BreakevenAnalysisCard = ({ title, value, description }) => {
   return (
     <Card className="border border-dime-bright-pink rounded-sm h-full p-0">
       <CardContent className="p-6">

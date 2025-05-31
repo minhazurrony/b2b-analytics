@@ -1,5 +1,3 @@
-"use client";
-
 import {
   XAxis,
   YAxis,
@@ -10,9 +8,14 @@ import {
   Area,
   AreaChart,
 } from "recharts";
-import { useEffect, useState } from "react";
-import { ChartLoader } from "./chart-loader";
 import { CustomYAxisTick } from "./custom-y-axis-tick";
+import { LegendWithLines } from "./legend-with-lines";
+
+const legendLabels = {
+  revenue: "Revenue",
+  fixedCosts: "Fixed Costs",
+  variableCosts: "Variable Costs",
+};
 
 const CustomTooltip = ({ active, payload, label }) => {
   if (active && payload?.length) {
@@ -34,62 +37,12 @@ const CustomTooltip = ({ active, payload, label }) => {
   return null;
 };
 
-const CustomLegend = ({ payload }) => {
-  return (
-    <div
-      className="flex gap-6 p-1 border rounded justify-center flex-wrap text-sm font-semibold text-dime-body-grey"
-      style={{ borderColor: "var(--color-dime-outline-grey)" }}>
-      {payload.map((entry) => {
-        const labels = {
-          revenue: "Revenue",
-          fixedCosts: "Fixed Costs",
-          variableCosts: "Variable Costs",
-        };
-        return (
-          <div key={entry.value} className="flex items-center">
-            <svg width={32} height={10} className="mr-2">
-              <line
-                x1={0}
-                y1={5}
-                x2={32}
-                y2={5}
-                stroke={entry.color}
-                strokeWidth={3}
-              />
-            </svg>
-            <span>{labels[entry.value]}</span>
-          </div>
-        );
-      })}
-    </div>
-  );
-};
-
-export function BreakevenChart() {
-  const [data, setData] = useState({ chart: [] });
-  const [isLoading, setIsLoading] = useState(false);
-
-  useEffect(() => {
-    setIsLoading(true);
-    fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/breakeven-analysis`)
-      .then((res) => res.json())
-      .then((json) => {
-        setData(json);
-        setIsLoading(false);
-      })
-      .catch((err) => console.error(err))
-      .finally(() => setIsLoading(false));
-  }, []);
-
-  if (isLoading || !data.chart.length) {
-    return <ChartLoader />;
-  }
-
+export const BreakevenAnalysisChart = ({ data }) => {
   return (
     <div className="h-[350px] breakeven-analysis-chart-container">
       <ResponsiveContainer width="100%" height="100%">
         <AreaChart
-          data={data.chart}
+          data={data}
           margin={{ top: 10, right: 4, bottom: 0, left: 0 }}>
           <defs>
             <linearGradient id="fixedCostsGradient" x1="0" y1="0" x2="0" y2="1">
@@ -119,7 +72,10 @@ export function BreakevenChart() {
             tick={<CustomYAxisTick shortFormatCurrency={true} />}
           />
           <Tooltip content={<CustomTooltip />} />
-          <Legend verticalAlign="bottom" content={CustomLegend} />
+          <Legend
+            verticalAlign="bottom"
+            content={<LegendWithLines labelMap={legendLabels} />}
+          />
           <Area
             type="monotone"
             dataKey="revenue"
@@ -151,4 +107,4 @@ export function BreakevenChart() {
       </ResponsiveContainer>
     </div>
   );
-}
+};

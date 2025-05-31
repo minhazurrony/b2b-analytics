@@ -1,11 +1,10 @@
 import { Container } from "@/components/custom/container";
 import { KPIResultTable } from "@/components/custom/kpi-result-table";
-import ProfitabilityChart from "@/components/custom/profitability-chart";
-import { BreakevenChart } from "@/components/custom/breakeven-chart";
-import { AnalysisStatsSection } from "@/components/custom/analysis-stats-section";
+import { ProfitabilityChart } from "@/components/custom/profitability-chart";
 import { RevenueBenchmark } from "@/components/custom/revenue-benchmark";
 import { KPIAccordion } from "@/components/custom/kpi-accordion";
 import { GrowthBenchmark } from "@/components/custom/growth-benchmark";
+import { BreakevenAnalysis } from "@/components/custom/breakeven-analysis";
 
 export default function Home() {
   return (
@@ -19,10 +18,7 @@ export default function Home() {
       </Container>
 
       <Container title="Breakeven Analysis">
-        <BreakevenChart />
-        <div className="mt-5">
-          <AnalysisStatsSection />
-        </div>
+        <BreakevenAnalysis />
       </Container>
 
       <Container title="Revenue Benchmark">

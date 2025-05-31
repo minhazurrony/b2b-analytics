@@ -3,8 +3,9 @@ import { KPIResultTable } from "@/components/custom/kpi-result-table";
 import ProfitabilityChart from "@/components/custom/profitability-chart";
 import { BreakevenChart } from "@/components/custom/breakeven-chart";
 import { AnalysisStatsSection } from "@/components/custom/analysis-stats-section";
-import { RevenueBenchmarkChart } from "@/components/custom/revenue-benchmark-chart";
+import { RevenueBenchmark } from "@/components/custom/revenue-benchmark";
 import { KPIAccordion } from "@/components/custom/kpi-accordion";
+import { GrowthBenchmark } from "@/components/custom/growth-benchmark";
 
 export default function Home() {
   return (
@@ -25,7 +26,11 @@ export default function Home() {
       </Container>
 
       <Container title="Revenue Benchmark">
-        <RevenueBenchmarkChart />
+        <RevenueBenchmark />
+      </Container>
+
+      <Container title="Growth Benchmark">
+        <GrowthBenchmark />
       </Container>
 
       <Container title="KPI Explained (Appendix)">

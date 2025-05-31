@@ -12,6 +12,7 @@ import {
   CartesianGrid,
 } from "recharts";
 import { ChartLoader } from "./chart-loader";
+import { CustomYAxisTick } from "./custom-y-axis-tick";
 
 const CustomTooltip = ({ active, payload, label }) => {
   if (active && payload?.length) {
@@ -116,7 +117,9 @@ export default function ProfitabilityChart() {
   return (
     <div className="h-[350px] profitability-chart-container">
       <ResponsiveContainer width="100%" height="100%">
-        <LineChart data={chartData}>
+        <LineChart
+          data={chartData}
+          margin={{ top: 10, right: 4, bottom: 0, left: 0 }}>
           <CartesianGrid
             stroke={"var(--color-dime-outline-grey)"}
             vertical={false}
@@ -124,21 +127,18 @@ export default function ProfitabilityChart() {
           />
           <XAxis
             dataKey="date"
-            tick={false}
             tickLine={false}
             axisLine={false}
+            tick={false}
+            padding={{ left: 80 }}
           />
           <YAxis
             axisLine={false}
             tickLine={false}
             tickFormatter={(v) => `$${v.toLocaleString()}`}
             ticks={[0, 50000, 100000, 150000]}
-            width={70}
-            tick={{
-              fontSize: 12,
-              fill: "var(--color-dime-form-grey)",
-              fontWeight: 600,
-            }}
+            tick={<CustomYAxisTick />}
+            width={1}
           />
           <Tooltip content={<CustomTooltip />} />
           <Legend verticalAlign="bottom" content={CustomLegend} />

@@ -12,6 +12,7 @@ import {
 } from "recharts";
 import { useEffect, useState } from "react";
 import { ChartLoader } from "./chart-loader";
+import { CustomYAxisTick } from "./custom-y-axis-tick";
 
 const CustomTooltip = ({ active, payload, label }) => {
   if (active && payload?.length) {
@@ -87,7 +88,9 @@ export function BreakevenChart() {
   return (
     <div className="h-[350px] breakeven-analysis-chart-container">
       <ResponsiveContainer width="100%" height="100%">
-        <AreaChart data={data.chart}>
+        <AreaChart
+          data={data.chart}
+          margin={{ top: 10, right: 4, bottom: 0, left: 0 }}>
           <defs>
             <linearGradient id="fixedCostsGradient" x1="0" y1="0" x2="0" y2="1">
               <stop offset="0%" stopColor="#C1C1CE" stopOpacity="0.9" />
@@ -105,18 +108,15 @@ export function BreakevenChart() {
             tick={false}
             tickLine={false}
             axisLine={false}
+            padding={{ left: 80 }}
           />
           <YAxis
             axisLine={false}
             tickLine={false}
             tickFormatter={(v) => `$${v / 1000}K`}
             ticks={[0, 25000, 50000, 75000, 100000, 125000, 150000]}
-            width={70}
-            tick={{
-              fontSize: 12,
-              fill: "var(--color-dime-form-grey)",
-              fontWeight: 600,
-            }}
+            width={1}
+            tick={<CustomYAxisTick shortFormatCurrency={true} />}
           />
           <Tooltip content={<CustomTooltip />} />
           <Legend verticalAlign="bottom" content={CustomLegend} />

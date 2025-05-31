@@ -12,6 +12,7 @@ import {
   ZAxis,
 } from "recharts";
 import { ChartLoader } from "./chart-loader";
+import { CustomYAxisTick } from "./custom-y-axis-tick";
 
 const CustomLegend = ({ payload }) => {
   return (
@@ -52,7 +53,7 @@ export const BenchmarkChart = ({ data, isLoading, caption }) => {
       <div className="text-xs font-semibold text-dime-form-grey">{caption}</div>
 
       <ResponsiveContainer width="100%" height="100%">
-        <ScatterChart margin={{ top: 10, right: 60, bottom: 40, left: 10 }}>
+        <ScatterChart margin={{ top: 20, right: 4, bottom: 40, left: 0 }}>
           <CartesianGrid
             strokeDasharray={0}
             stroke="var(--color-dime-outline-grey)"
@@ -76,12 +77,8 @@ export const BenchmarkChart = ({ data, isLoading, caption }) => {
             domain={[0, 350000]}
             axisLine={false}
             tickLine={false}
-            tick={{
-              fontSize: 12,
-              fill: "var(--color-dime-form-grey)",
-              fontWeight: 600,
-            }}
-            tickFormatter={(y) => `$${y.toLocaleString()}`}
+            tick={<CustomYAxisTick />}
+            width={1}
           />
 
           <ZAxis dataKey="z" range={[200, 5000]} />
@@ -101,7 +98,7 @@ export const BenchmarkChart = ({ data, isLoading, caption }) => {
         </ScatterChart>
       </ResponsiveContainer>
 
-      <div className="absolute right-14 top-0 bottom-12 flex flex-col justify-center gap-12 text-xs text-dime-form-grey font-semibold pointer-events-none">
+      <div className="absolute right-1 top-0 bottom-12 flex flex-col justify-center gap-12 text-xs text-dime-form-grey font-semibold pointer-events-none">
         <div>90th</div>
         <div>75th</div>
         <div>50th</div>

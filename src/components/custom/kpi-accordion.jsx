@@ -26,7 +26,11 @@ export const KPIAccordion = () => {
     return <ChartLoader />;
   }
   return (
-    <Accordion.Root type="single" collapsible className="w-full">
+    <Accordion.Root
+      defaultValue={data[0]?.id}
+      type="single"
+      collapsible
+      className="w-full">
       {data.map((item) => {
         return (
           <Accordion.Item key={item.id} value={item.id} className="border-b">

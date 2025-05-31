@@ -1,10 +1,10 @@
 "use client";
-
 import React, { useEffect, useState } from "react";
 import * as Accordion from "@radix-ui/react-accordion";
 import { ChevronDown, CircleX, CircleCheck } from "lucide-react";
-import { DimeProgressbar } from "./dime-progressbar";
+import { KPIProgressbar } from "./kpi-progressbar";
 import { ChartLoader } from "./chart-loader";
+import { KPIAccordionStats } from "./kpi-accordion-stats";
 
 export const KPIAccordion = () => {
   const [data, setData] = useState([]);
@@ -72,34 +72,10 @@ export const KPIAccordion = () => {
 
               <div className="flex justify-between items-center">
                 <div className="w-[30%] flex justify-between items-center">
-                  <div>
-                    <p className="text-xs text-dime-dark-grey font-normal leading-[150%]">
-                      Median
-                    </p>
-                    <p className="text-base text-dime-title-purple font-semibold leading-[175%]">
-                      {`$${item.median.toLocaleString()}`}
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-xs text-dime-dark-grey font-normal leading-[150%]">
-                      Rank
-                    </p>
-                    <p className="text-base text-dime-title-purple font-semibold leading-[175%]">
-                      {item.rank}
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-xs text-dime-dark-grey font-normal leading-[150%]">
-                      Percentile
-                    </p>
-                    <p className="text-base text-dime-title-purple font-semibold leading-[175%]">
-                      {`${item.percentile}%`}
-                    </p>
-                  </div>
+                  <KPIAccordionStats stats={item} />
                 </div>
-
                 <div className="w-[50%]">
-                  <DimeProgressbar value={item.progress} />
+                  <KPIProgressbar value={item.progress} />
                 </div>
               </div>
             </Accordion.Content>

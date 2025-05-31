@@ -1,27 +1,27 @@
-import * as React from "react";
+import React from "react";
 
-export const DimeProgressbar = ({ value }) => {
-  const ticks = [0, 20, 40, 60, 80, 100];
+const renderStyle = (tick) => {
+  switch (tick) {
+    case 0:
+      return `${tick + 1.5}%`;
 
-  const renderStyle = (tick) => {
-    switch (tick) {
-      case 0:
-        return `${tick + 1.5}%`;
+    case 20:
+      return `${tick + 1}%`;
 
-      case 20:
-        return `${tick + 1}%`;
+    case 40:
+      return `${tick + 0.5}%`;
 
-      case 40:
-        return `${tick + 0.5}%`;
+    case 100:
+      return `${tick - 2}%`;
 
-      case 100:
-        return `${tick - 2}%`;
+    default:
+      return `${tick}%`;
+  }
+};
 
-      default:
-        return `${tick}%`;
-    }
-  };
+const ticks = [0, 20, 40, 60, 80, 100];
 
+export const KPIProgressbar = ({ value }) => {
   return (
     <div className="w-full">
       {/* Outer border */}

@@ -387,6 +387,143 @@
       }
     ]
   },
+  "growth-benchmark": {
+    "chart": {
+      "regions": [
+        {
+          "region": "North",
+          "color": "rgba(64, 100, 243, 0.5)",
+          "businesses": [
+            {
+              "rank": 1,
+              "name": "North Gym One",
+              "x": 1,
+              "y": 30000,
+              "z": 1800
+            },
+            {
+              "rank": 2,
+              "name": "North Gym Two",
+              "x": 4.5,
+              "y": 100000,
+              "z": 3000
+            },
+            {
+              "rank": 3,
+              "name": "North Gym Three",
+              "x": 1.3,
+              "y": 300000,
+              "z": 5000
+            }
+          ]
+        },
+        {
+          "region": "South",
+          "color": "rgba(48, 191, 143, 0.5)",
+          "businesses": [
+            {
+              "rank": 4,
+              "name": "South Powerhouse",
+              "x": 2.3,
+              "y": 310000,
+              "z": 1000
+            },
+            {
+              "rank": 5,
+              "name": "South Gym Central",
+              "x": 1.3,
+              "y": 180000,
+              "z": 3000
+            },
+            {
+              "rank": 6,
+              "name": "South BurnFit",
+              "x": 2.6,
+              "y": 50000,
+              "z": 220
+            }
+          ]
+        },
+        {
+          "region": "East",
+          "color": "rgba(255, 201, 121, 0.5)",
+          "businesses": [
+            {
+              "rank": 7,
+              "name": "Foundry Fitness",
+              "x": 3,
+              "y": 270000,
+              "z": 2700
+            },
+            {
+              "rank": 8,
+              "name": "East Energy Club",
+              "x": 3.1,
+              "y": 150000,
+              "z": 1000
+            },
+            {
+              "rank": 9,
+              "name": "East Core Gym",
+              "x": 3.5,
+              "y": 70000,
+              "z": 1800
+            }
+          ]
+        },
+        {
+          "region": "West",
+          "color": "rgba(255, 132, 87, 0.5)",
+          "businesses": [
+            {
+              "rank": 10,
+              "name": "West Warriors",
+              "x": 4,
+              "y": 320000,
+              "z": 1000
+            },
+            {
+              "rank": 11,
+              "name": "West Elite",
+              "x": 4.4,
+              "y": 220000,
+              "z": 2260
+            },
+            { "rank": 12, "name": "WestFit", "x": 4, "y": 60000, "z": 750 }
+          ]
+        },
+        {
+          "region": "Other",
+          "color": "rgba(235, 87, 87, 0.5)",
+          "businesses": [
+            {
+              "rank": 13,
+              "name": "Other Alpha Gym",
+              "x": 2,
+              "y": 150000,
+              "z": 3000
+            },
+            {
+              "rank": 14,
+              "name": "Other Beta Club",
+              "x": 3.5,
+              "y": 150000,
+              "z": 3000
+            },
+            { "rank": 15, "name": "Other Zone", "x": 5, "y": 300000, "z": 2500 }
+          ]
+        }
+      ]
+    },
+    "analytics": [
+      {
+        "quarter": "0.2%",
+        "median": "0.41%",
+        "rank": "55/68",
+        "percentile": "20%"
+      }
+    ]
+  },
   "kpi-appendix": [
     {
       "id": "1",

@@ -1,5 +1,3 @@
-"use client";
-
 import {
   XAxis,
   YAxis,
@@ -13,21 +11,7 @@ import {
 } from "recharts";
 import { ChartLoader } from "./chart-loader";
 import { CustomYAxisTick } from "./custom-y-axis-tick";
-
-const CustomLegend = ({ payload }) => {
-  return (
-    <div className="flex gap-6 p-1 border border-dime-outline-grey rounded justify-center flex-wrap text-sm font-semibold text-dime-body-grey">
-      {payload.map((entry) => (
-        <div key={entry.value} className="flex items-center">
-          <svg width={16} height={16} className="mr-2">
-            <circle cx={8} cy={8} r={8} fill={entry.color} />
-          </svg>
-          <span>{entry.value}</span>
-        </div>
-      ))}
-    </div>
-  );
-};
+import { LegendWithCircle } from "./legend-with-circle";
 
 const CustomTooltip = ({ active, payload }) => {
   if (active && payload?.length) {
@@ -84,7 +68,7 @@ export const BenchmarkChart = ({ data, isLoading, caption }) => {
           <ZAxis dataKey="z" range={[200, 5000]} />
 
           <Tooltip content={<CustomTooltip />} />
-          <Legend content={<CustomLegend />} />
+          <Legend content={<LegendWithCircle />} />
 
           {data?.regions?.map((group) => (
             <Scatter

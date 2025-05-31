@@ -1,5 +1,4 @@
 "use client";
-
 import { useState, useEffect } from "react";
 import {
   LineChart,
@@ -13,6 +12,13 @@ import {
 } from "recharts";
 import { ChartLoader } from "./chart-loader";
 import { CustomYAxisTick } from "./custom-y-axis-tick";
+import { LegendWithLines } from "./legend-with-lines";
+
+const legendLabels = {
+  revenue: "Revenue",
+  gross: "Gross Profit",
+  operating: "Operating Profit",
+};
 
 const CustomTooltip = ({ active, payload, label }) => {
   if (active && payload?.length) {
@@ -27,80 +33,13 @@ const CustomTooltip = ({ active, payload, label }) => {
   return null;
 };
 
-const CustomLegend = ({ payload }) => {
-  return (
-    <div
-      style={{
-        display: "flex",
-        gap: 12,
-        padding: 4,
-        borderRadius: 4,
-        border: "1px solid var(--color-dime-outline-grey)",
-        justifyContent: "center",
-        flexWrap: "wrap",
-      }}>
-      {payload.map((entry) => {
-        let label = entry.value;
-        if (entry.value === "revenue")
-          label = (
-            <span className="text-sm font-semibold text-dime-body-grey">
-              Revenue
-            </span>
-          );
-        else if (entry.value === "gross")
-          label = (
-            <span className="text-sm font-semibold text-dime-body-grey">
-              Gross Profit
-            </span>
-          );
-        else if (entry.value === "operating")
-          label = (
-            <span className="text-sm font-semibold text-dime-body-grey">
-              Operating Profit
-            </span>
-          );
-
-        return (
-          <div
-            key={entry.value}
-            style={{
-              display: "flex",
-              alignItems: "center",
-              cursor: "pointer",
-            }}>
-            <svg width={32} height={10} style={{ marginRight: 8 }}>
-              <line
-                x1={0}
-                y1={5}
-                x2={32} // line length 40px
-                y2={5}
-                stroke={entry.color}
-                strokeWidth={3}
-              />
-            </svg>
-
-            {/* Label */}
-            {typeof label === "string" ? (
-              <span className="text-sm font-semibold text-dime-body-grey">
-                {label}
-              </span>
-            ) : (
-              label
-            )}
-          </div>
-        );
-      })}
-    </div>
-  );
-};
-
-export default function ProfitabilityChart() {
+export const ProfitabilityChart = () => {
   const [chartData, setChartData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     setIsLoading(true);
-    fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/profitability-chart`)
+    fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/profitability-records`)
       .then((res) => res.json())
       .then((json) => {
         setChartData(json);
@@ -141,7 +80,10 @@ export default function ProfitabilityChart() {
             width={1}
           />
           <Tooltip content={<CustomTooltip />} />
-          <Legend verticalAlign="bottom" content={CustomLegend} />
+          <Legend
+            verticalAlign="bottom"
+            content={<LegendWithLines labelMap={legendLabels} />}
+          />
           <Line
             type="monotone"
             dataKey="revenue"
@@ -167,4 +109,4 @@ export default function ProfitabilityChart() {
       </ResponsiveContainer>
     </div>
   );
-}
+};

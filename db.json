@@ -141,7 +141,7 @@
       ]
     }
   ],
-  "profitability-chart": [
+  "profitability-records": [
     { "date": "Jan 1", "revenue": 72000, "gross": 52000, "operating": 42000 },
     { "date": "Jan 5", "revenue": 6900, "gross": 55000, "operating": 43000 },
     { "date": "Jan 10", "revenue": 76000, "gross": 57000, "operating": 45000 },
@@ -546,7 +546,7 @@
       "formula": "Cash on Hand = Cash & Equivalents",
       "median": 1599532,
       "rank": "5/6",
-      "percentile": 0,
+      "percentile": 80,
       "progress": 60
     }
   ]

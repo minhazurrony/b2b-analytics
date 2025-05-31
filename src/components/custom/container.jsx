@@ -11,6 +11,17 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
+const dropdownOptions = [
+  {
+    label: "Current Week to Previous Week",
+    value: "current-to-previous-week",
+  },
+  {
+    label: "Current Week to Previous Two Weeks",
+    value: "current-to-previous-two-weeks",
+  },
+];
+
 export const Container = ({
   title,
   isBottomBorderVisible = true,
@@ -38,12 +49,11 @@ export const Container = ({
               <SelectContent>
                 <SelectGroup>
                   <SelectLabel>Ranges</SelectLabel>
-                  <SelectItem value="current-to-previous-week">
-                    Current Week to Previous Week
-                  </SelectItem>
-                  <SelectItem value="current-to-previous-two-week">
-                    Current Week to Previous Two Weeks
-                  </SelectItem>
+                  {dropdownOptions.map((option) => (
+                    <SelectItem key={option.value} value={option.value}>
+                      {option.label}
+                    </SelectItem>
+                  ))}
                 </SelectGroup>
               </SelectContent>
             </Select>

@@ -114,7 +114,7 @@ export default function ProfitabilityChart() {
   }
 
   return (
-    <div className="h-[350px]">
+    <div className="h-[350px] profitability-chart-container">
       <ResponsiveContainer width="100%" height="100%">
         <LineChart data={chartData}>
           <CartesianGrid

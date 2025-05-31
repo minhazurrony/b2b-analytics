@@ -15,7 +15,7 @@ import { ChartLoader } from "./chart-loader";
 
 const CustomLegend = ({ payload }) => {
   return (
-    <div className="flex gap-6 p-2 border border-dime-outline-grey rounded justify-center flex-wrap text-sm font-semibold text-dime-body-grey">
+    <div className="flex gap-6 p-1 border border-dime-outline-grey rounded justify-center flex-wrap text-sm font-semibold text-dime-body-grey">
       {payload.map((entry) => (
         <div key={entry.value} className="flex items-center">
           <svg width={16} height={16} className="mr-2">
@@ -48,7 +48,7 @@ export const BenchmarkChart = ({ data, isLoading, caption }) => {
   }
 
   return (
-    <div className="relative w-full h-[474px]">
+    <div className="relative w-full h-[474px] benchmark-chart-container">
       <div className="text-xs font-semibold text-dime-form-grey">{caption}</div>
 
       <ResponsiveContainer width="100%" height="100%">

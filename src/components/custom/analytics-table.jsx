@@ -10,7 +10,7 @@ import {
 export const AnalyticsTable = ({ columns, data, className = "" }) => {
   return (
     <div
-      className={`rounded-sm p-5 border border-dime-outline-grey bg-white overflow-auto ${className}`}>
+      className={`rounded-sm px-4 py-2 border border-dime-outline-grey bg-white overflow-auto ${className}`}>
       <Table>
         <TableHeader className="border-b-dime-body-grey">
           <TableRow>

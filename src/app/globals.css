@@ -136,12 +136,26 @@
 }
 
 @layer components {
-  .recharts-cartesian-grid-horizontal line:last-child {
-    /* @apply hidden; */
+  .profitability-chart-container
+    :is(.recharts-cartesian-grid-horizontal line:last-child),
+  .breakeven-analysis-chart-container
+    :is(.recharts-cartesian-grid-horizontal line:last-child) {
+    @apply hidden;
   }
 
-  .recharts-cartesian-grid-vertical line:nth-child(6),
-  .recharts-cartesian-grid-vertical line:nth-child(7) {
+  .benchmark-chart-container
+    :is(.recharts-cartesian-grid-vertical line:nth-child(6)),
+  .benchmark-chart-container
+    :is(.recharts-cartesian-grid-vertical line:nth-child(7)) {
     @apply hidden;
+  }
+}
+
+@layer utilities {
+  .breakeven-analysis-chart-container .recharts-legend-wrapper,
+  .profitability-chart-container .recharts-legend-wrapper,
+  .benchmark-chart-container .recharts-legend-wrapper {
+    width: 100% !important;
+    left: 0 !important;
   }
 }

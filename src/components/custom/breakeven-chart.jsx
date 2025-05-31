@@ -36,7 +36,7 @@ const CustomTooltip = ({ active, payload, label }) => {
 const CustomLegend = ({ payload }) => {
   return (
     <div
-      className="flex gap-6 p-2 border rounded justify-center flex-wrap text-sm font-semibold text-dime-body-grey"
+      className="flex gap-6 p-1 border rounded justify-center flex-wrap text-sm font-semibold text-dime-body-grey"
       style={{ borderColor: "var(--color-dime-outline-grey)" }}>
       {payload.map((entry) => {
         const labels = {
@@ -85,7 +85,7 @@ export function BreakevenChart() {
   }
 
   return (
-    <div className="h-[350px]">
+    <div className="h-[350px] breakeven-analysis-chart-container">
       <ResponsiveContainer width="100%" height="100%">
         <AreaChart data={data.chart}>
           <defs>

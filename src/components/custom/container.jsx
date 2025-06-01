@@ -28,7 +28,7 @@ export const Container = ({
   children,
 }) => {
   return (
-    <Card className="w-3/4 mx-auto mt-6 mb-6 rounded-md">
+    <Card className="w-full  mt-6 mb-6 rounded-md">
       <CardHeader
         className={`${
           !isBottomBorderVisible && "flex justify-center items-center"

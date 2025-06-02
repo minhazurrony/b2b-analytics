@@ -255,7 +255,7 @@
       "regions": [
         {
           "region": "North",
-          "color": "rgba(64, 100, 243, 0.5)",
+          "color": "rgba(64, 100, 243, 1)",
           "businesses": [
             {
               "rank": 1,
@@ -282,7 +282,7 @@
         },
         {
           "region": "South",
-          "color": "rgba(48, 191, 143, 0.5)",
+          "color": "rgba(48, 191, 143, 1)",
           "businesses": [
             {
               "rank": 4,
@@ -309,7 +309,7 @@
         },
         {
           "region": "East",
-          "color": "rgba(255, 201, 121, 0.5)",
+          "color": "rgba(255, 201, 121, 1)",
           "businesses": [
             {
               "rank": 7,
@@ -336,7 +336,7 @@
         },
         {
           "region": "West",
-          "color": "rgba(255, 132, 87, 0.5)",
+          "color": "rgba(255, 132, 87, 1)",
           "businesses": [
             {
               "rank": 10,
@@ -357,7 +357,7 @@
         },
         {
           "region": "Other",
-          "color": "rgba(235, 87, 87, 0.5)",
+          "color": "rgba(235, 87, 87, 1)",
           "businesses": [
             {
               "rank": 13,
@@ -392,7 +392,7 @@
       "regions": [
         {
           "region": "North",
-          "color": "rgba(64, 100, 243, 0.5)",
+          "color": "rgba(64, 100, 243, 1)",
           "businesses": [
             {
               "rank": 1,
@@ -419,7 +419,7 @@
         },
         {
           "region": "South",
-          "color": "rgba(48, 191, 143, 0.5)",
+          "color": "rgba(48, 191, 143, 1)",
           "businesses": [
             {
               "rank": 4,
@@ -446,7 +446,7 @@
         },
         {
           "region": "East",
-          "color": "rgba(255, 201, 121, 0.5)",
+          "color": "rgba(255, 201, 121, 1)",
           "businesses": [
             {
               "rank": 7,
@@ -473,7 +473,7 @@
         },
         {
           "region": "West",
-          "color": "rgba(255, 132, 87, 0.5)",
+          "color": "rgba(255, 132, 87, 1)",
           "businesses": [
             {
               "rank": 10,
@@ -494,7 +494,7 @@
         },
         {
           "region": "Other",
-          "color": "rgba(235, 87, 87, 0.5)",
+          "color": "rgba(235, 87, 87, 1)",
           "businesses": [
             {
               "rank": 13,

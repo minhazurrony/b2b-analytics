@@ -6,7 +6,7 @@ export const LegendWithCircle = ({ payload }) => {
       {payload.map((entry) => (
         <div key={entry.value} className="flex items-center">
           <svg width={16} height={16} className="mr-2">
-            <circle cx={8} cy={8} r={8} fill={entry.color} />
+            <circle cx={8} cy={8} r={8} fill={entry.color} opacity={0.5} />
           </svg>
           <span>{entry.value}</span>
         </div>

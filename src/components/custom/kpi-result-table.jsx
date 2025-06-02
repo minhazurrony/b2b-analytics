@@ -1,5 +1,5 @@
 "use client";
-import { CustomTableHead } from "@/components/custom/table-head";
+import React from "react";
 import {
   Table,
   TableHeader,
@@ -7,24 +7,12 @@ import {
   TableBody,
   TableCell,
 } from "@/components/ui/table";
-import React, { useEffect, useState } from "react";
+import { CustomTableHead } from "@/components/custom/table-head";
 import { TableLoader } from "./table-loader";
+import { useApi } from "@/hooks/use-api";
 
 export const KPIResultTable = () => {
-  const [kpiData, setKpiData] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-
-  useEffect(() => {
-    setIsLoading(true);
-    fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/kpi-results`)
-      .then((res) => res.json())
-      .then((json) => {
-        setKpiData(json);
-        setIsLoading(false);
-      })
-      .catch((err) => console.error(err))
-      .finally(() => setIsLoading(false));
-  }, []);
+  const { data: kpiData, isLoading } = useApi("/kpi-results");
 
   if (isLoading || !kpiData.length) {
     return <TableLoader />;

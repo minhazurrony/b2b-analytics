@@ -1,24 +1,11 @@
 "use client";
-import React, { useState, useEffect } from "react";
 import { BreakevenAnalysisChart } from "./breakeven-analysis-chart";
 import { BreakevenAnalysisStats } from "./breakeven-analysis-stats";
 import { ChartLoader } from "./chart-loader";
+import { useApi } from "@/hooks/use-api";
 
 export const BreakevenAnalysis = () => {
-  const [data, setData] = useState({ chart: [], analysis: [] });
-  const [isLoading, setIsLoading] = useState(false);
-
-  useEffect(() => {
-    setIsLoading(true);
-    fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/breakeven-analysis`)
-      .then((res) => res.json())
-      .then((json) => {
-        setData(json);
-        setIsLoading(false);
-      })
-      .catch((err) => console.error(err))
-      .finally(() => setIsLoading(false));
-  }, []);
+  const { data, isLoading } = useApi("/breakeven-analysis");
 
   if (isLoading || !data.chart.length || !data.analysis.length) {
     return <ChartLoader />;

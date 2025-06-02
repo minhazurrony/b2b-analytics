@@ -1,26 +1,14 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import * as Accordion from "@radix-ui/react-accordion";
 import { ChevronDown, CircleX, CircleCheck } from "lucide-react";
 import { KPIProgressbar } from "./kpi-progressbar";
 import { ChartLoader } from "./chart-loader";
 import { KPIAccordionStats } from "./kpi-accordion-stats";
+import { useApi } from "@/hooks/use-api";
 
 export const KPIAccordion = () => {
-  const [data, setData] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-
-  useEffect(() => {
-    setIsLoading(true);
-    fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/kpi-appendix`)
-      .then((res) => res.json())
-      .then((json) => {
-        setData(json);
-        setIsLoading(false);
-      })
-      .catch((err) => console.error(err))
-      .finally(() => setIsLoading(false));
-  }, []);
+  const { data, isLoading } = useApi("/kpi-appendix");
 
   if (isLoading || !data.length) {
     return <ChartLoader />;

@@ -24,7 +24,7 @@ export const AnalyticsTable = ({ columns, data, className = "" }) => {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {data.map((row, idx) => (
+          {data?.map((row, idx) => (
             <TableRow key={idx} className="even:bg-muted/20">
               {columns.map((col) => (
                 <TableCell

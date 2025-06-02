@@ -1,7 +1,7 @@
 "use client";
-import { useEffect, useState } from "react";
 import { AnalyticsTable } from "./analytics-table";
 import { BenchmarkChart } from "./benchmark-chart";
+import { useApi } from "@/hooks/use-api";
 
 const analyticsTableColumns = [
   { key: "month", label: "November 2021" },
@@ -11,29 +11,16 @@ const analyticsTableColumns = [
 ];
 
 export const RevenueBenchmark = () => {
-  const [data, setData] = useState({ chart: [], analytics: [] });
-  const [isLoading, setIsLoading] = useState(false);
-
-  useEffect(() => {
-    setIsLoading(true);
-    fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/revenue-benchmark`)
-      .then((res) => res.json())
-      .then((json) => {
-        setData(json);
-        setIsLoading(false);
-      })
-      .catch((err) => console.error(err))
-      .finally(() => setIsLoading(false));
-  }, []);
+  const { data, isLoading } = useApi("/revenue-benchmark");
 
   return (
     <>
       <BenchmarkChart
         caption="Total Revenue"
         isLoading={isLoading}
-        data={data.chart}
+        data={data?.chart}
       />
-      <AnalyticsTable columns={analyticsTableColumns} data={data.analytics} />
+      <AnalyticsTable columns={analyticsTableColumns} data={data?.analytics} />
     </>
   );
 };

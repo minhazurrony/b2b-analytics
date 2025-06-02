@@ -1,5 +1,4 @@
 "use client";
-import { useState, useEffect } from "react";
 import {
   LineChart,
   Line,
@@ -13,6 +12,7 @@ import {
 import { ChartLoader } from "./chart-loader";
 import { CustomYAxisTick } from "./custom-y-axis-tick";
 import { LegendWithLines } from "./legend-with-lines";
+import { useApi } from "@/hooks/use-api";
 
 const legendLabels = {
   revenue: "Revenue",
@@ -34,20 +34,7 @@ const CustomTooltip = ({ active, payload, label }) => {
 };
 
 export const ProfitabilityChart = () => {
-  const [chartData, setChartData] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-
-  useEffect(() => {
-    setIsLoading(true);
-    fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/profitability-records`)
-      .then((res) => res.json())
-      .then((json) => {
-        setChartData(json);
-        setIsLoading(false);
-      })
-      .catch((err) => console.error(err))
-      .finally(() => setIsLoading(false));
-  }, []);
+  const { data: chartData, isLoading } = useApi("/profitability-records");
 
   if (isLoading || !chartData.length) {
     return <ChartLoader />;
